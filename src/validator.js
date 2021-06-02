@@ -1,4 +1,22 @@
-
+let aux=[];
+function maskify(creditCardNumber) {
+  let card = creditCardNumber;
+  console.log(card);
+  aux.push(card[card.length-1]);
+  console.log(aux);
+  card=card.split("");
+  let hideNum = [];
+   for(let i = 0; i < card.length; i++){
+     if(i < card.length-4){
+       hideNum.push("#");
+    }
+    else{
+       hideNum.push(card[i]);
+     }
+     hideNum.join("");
+    }
+      return hideNum.join("");
+    }  
 function isvalid(creditCardNumber){
  // transformamos el NumberCard1 en un array para que cada digito quede separado
  let Box = Array.from(creditCardNumber);
@@ -27,18 +45,19 @@ function isvalid(creditCardNumber){
  if (resultado==0){
   alert("TARJETA VALIDA");
   //si la condicion anterior es falta o distinta a cero sería False y nos crea un alert de tarjeta invalida
-} else { alert("TARJETA INVALIDA")
+} else { alert("TARJETA INVALIDA");
 }
 
- };
- function maskify(creditCardNumber){
-   cardNumberMaskify = Array.from(creditCardNumber)
+ }
+
+
+  /*cardNumberMaskify = Array.from(creditCardNumber)
    let replaced =  cardNumberMaskify[i].replace(/.(?=.{4,}$)/g, "#");
    document.write(replaced)
-  /*return replaced;*/
-    }
+  return replaced;*/
+    
    
     
   
-const validator = {isvalid,maskify};
+const validator = {isvalid,maskify,aux};
  export default validator;
