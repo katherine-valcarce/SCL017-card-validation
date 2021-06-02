@@ -1,9 +1,7 @@
 let aux=[];
 function maskify(creditCardNumber) {
   let card = creditCardNumber;
-  console.log(card);
   aux.push(card[card.length-1]);
-  console.log(aux);
   card=card.split("");
   let hideNum = [];
    for(let i = 0; i < card.length; i++){
@@ -17,7 +15,8 @@ function maskify(creditCardNumber) {
     }
       return hideNum.join("");
     }  
-function isvalid(creditCardNumber){
+function isValid(creditCardNumber){
+  let booleano = "";
  // transformamos el NumberCard1 en un array para que cada digito quede separado
  let Box = Array.from(creditCardNumber);
  //se crea el bucle FOR para que recorra cada string ingresado y lo convierta en numero
@@ -42,22 +41,16 @@ function isvalid(creditCardNumber){
  //creamos la variable resultado donde es igual al residuo de la suma total divido en 10
  var resultado = Sum%10;
  // creamos una condicion donde establece que si el resultado es 0 esto es True y nos crea un alert de tarjeta valida
- if (resultado==0){
-  alert("TARJETA VALIDA");
+ if (resultado==0){ 
+   booleano = true;
+  /*alert("TARJETA VALIDA");*/
   //si la condicion anterior es falta o distinta a cero sería False y nos crea un alert de tarjeta invalida
-} else { alert("TARJETA INVALIDA");
-}
-
+} else { booleano = false;
+} /*alert("TARJETA INVALIDA")*/
+return booleano;
  }
 
-
-  /*cardNumberMaskify = Array.from(creditCardNumber)
-   let replaced =  cardNumberMaskify[i].replace(/.(?=.{4,}$)/g, "#");
-   document.write(replaced)
-  return replaced;*/
-    
-   
     
   
-const validator = {isvalid,maskify,aux};
+const validator = {aux,isValid,maskify};
  export default validator;

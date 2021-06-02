@@ -8,6 +8,12 @@ document.getElementById("NumberCard1").addEventListener("keyup",(e)=>{
 //llamamos al boton id=Validacion si esto es ejecutado al hacer "click" se ejecuta la funcion myFunction
 document.getElementById("Validacion").addEventListener("click",()=> { 
     let creditCardNumber = validator.aux;
-    validator.isvalid(creditCardNumber);
+    if (validator.isValid(creditCardNumber)==true){
+        alert("TARJETA VALIDA");
+    }else{
+        alert("TARJETA INVALIDA")
+    }
+    
+    /*validator.isValid(creditCardNumber);*/
 });
 
