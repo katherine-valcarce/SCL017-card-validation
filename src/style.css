@@ -3,7 +3,7 @@ body{
       width: 100px;
       height: 850px;
      margin:initial;
-      background-image: url(../imagenes/FONDO.jpg);
+      background-image: url(./imagenes/FONDO.jpg);
       background-repeat: no-repeat;
      background-size:180ch;
     }
